@@ -1,10 +1,5 @@
 terraform {
   required_providers {
-    archive = {
-      version = ">= 2.0"
-      source  = "hashicorp/archive"
-    }
-
     genesyscloud = {
       source = "mypurecloud/genesyscloud"
     }
@@ -26,7 +21,8 @@ resource "genesyscloud_script" "script" {
   filepath          = "${path.module}/schedule-callback-script.json"
   file_content_hash = filesha256("${path.module}/schedule-callback-script.json")
   substitutions = {
-    name = "Schedule Callback"
-    queue_id = data.genesyscloud_routing_queue.queue.id
+    name      = "Schedule Callback"
+    queue_id  = data.genesyscloud_routing_queue.queue.id
+    org_id    = var.org_id
   }
 }

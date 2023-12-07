@@ -75,12 +75,14 @@ An organization wants to allow agents schedule a callback during a voice interac
 
 In the **blueprint/terraform/dev.auto.tfvars** file, set the following values, which are specific to your Genesys Cloud organization:
 
-* `queue_name` - The queue the agents use for the callback script.
+* `queue_name`  - The queue the agents use for the callback script.
+* `org_id`      - The organization ID of your Genesys Cloud instance
 
 The following is an example of the dev.auto.tfvars file.
 
 ```
-queue_name = "Customer Support"
+queue_name  = "Customer Support"
+org_id      = "your-org-id"
 ```
 
 ### Run Terraform

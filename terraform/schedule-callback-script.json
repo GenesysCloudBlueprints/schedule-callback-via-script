@@ -1,14 +1,14 @@
 {
   "id": "8862df49-530e-40de-91b9-2f17119d73a0",
   "name": "{{name}}",
-  "organizationId": "03671e89-0883-48b0-8284-cd5260c38745",
+  "organizationId": "{{org_id}}",
   "versionId": "a7969998-02da-42f4-895c-c5e554e8a969",
   "startPageId": "a556a442-ffc0-11e4-8df6-17ce7d092df5",
   "pages": [
     {
       "id": "a556a442-ffc0-11e4-8df6-17ce7d092df5",
       "name": "Start Page",
-      "organizationId": "03671e89-0883-48b0-8284-cd5260c38745",
+      "organizationId": "{{org_id}}",
       "scriptId": "8862df49-530e-40de-91b9-2f17119d73a0",
       "versionId": "a7969998-02da-42f4-895c-c5e554e8a969",
       "properties": {
