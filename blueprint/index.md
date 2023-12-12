@@ -1,12 +1,12 @@
 ---
-title: Build a script that lets agent schedule a callback during a call
+title: Build a script that allows agents to schedule a callback during a call
 author: agnes.corpuz
 indextype: blueprint
 icon: blueprint
 image: images/banner.png
 category: 4
 summary: |
-  This Genesys Cloud Developer Blueprint provides instructions for building a script to let agents schedule a callback via Script while a voice interaction is ongoing. You can deploy all the components used in this solution with the Terraform Genesys Cloud CX as Code provider.
+  This Genesys Cloud Developer Blueprint provides instructions for building a script to allow agents to schedule a callback via Script while a voice interaction is ongoing. You can deploy all the components used in this solution with the Terraform Genesys Cloud CX as Code provider.
 ---
 :::{"alert":"primary","title":"About Genesys Cloud Blueprints","autoCollapse":false} 
 Genesys Cloud blueprints were built to help you jump-start building an application or integrating with a third-party partner. 
@@ -16,21 +16,21 @@ For more details on Genesys Cloud blueprint support and practices
 please see our Genesys Cloud blueprint [FAQ](https://developer.genesys.cloud/blueprints/faq) sheet.
 :::
 
-This Genesys Cloud Developer Blueprint provides instructions for building a script to let agents schedule a callback via Script while a voice interaction is ongoing. You can deploy all the components used in this solution with the Terraform Genesys Cloud CX as Code provider.
+This Genesys Cloud Developer Blueprint provides instructions for building a script to allow agents to schedule a callback via Script while a voice interaction is ongoing. You can deploy all the components used in this solution with the Terraform Genesys Cloud CX as Code provider.
 
 ![Overview](images/overview.png "Overview")
 
 ## Scenario
 
-An organization wants to allow agents schedule a callback during a voice interaction with a customer:
+An organization wants to allow agents to schedule a callback during a voice interaction with a customer:
 
-1. **The customer initiates a voice interaction.** The agent receives the customer's incoming interaction and answers to call.
+1. **The customer initiates a voice interaction.** The agent receives the customer's incoming interaction and answers the call.
 
-2. **The interaction cannot be completed.** The agent cannot answer the customer’s question or need to perform additional research.
+2. **The interaction cannot be completed.** The agent cannot answer the customer’s question or needs to perform more research.
 
-3. **The agent schedules a callback.** Agent and customer drops the interaction and wait for the callback schedule.
+3. **The agent schedules a callback.** The agent and the customer end the interaction and wait for the callback schedule.
 
-4. **The callback is initiated.** Agent accepts the callback and Genesys Cloud dials the callback recipient.
+4. **Genesys Cloud initiates the callback.** The agent accepts the callback and Genesys Cloud dials the callback recipient.
 
 ## Solution components
 
@@ -59,7 +59,7 @@ An organization wants to allow agents schedule a callback during a voice interac
 
 ### Download the repository containing the project files
 
-1. Clone the [schedule-callback-via-script](https://github.com/GenesysCloudBlueprints/schedule-callback-via-script "Opens the schedule-callback-via-script repository in GitHub").
+1. Clone the [schedule-callback-via-script repository](https://github.com/GenesysCloudBlueprints/schedule-callback-via-script "Opens the schedule-callback-via-script repository in GitHub").
 
 ### Set up Genesys Cloud
 
@@ -75,10 +75,10 @@ An organization wants to allow agents schedule a callback during a voice interac
 
 In the **blueprint/terraform/dev.auto.tfvars** file, set the following values, which are specific to your Genesys Cloud organization:
 
-* `queue_name`  - The queue the agents use for the callback script.
+* `queue_name`  - The queue the agents use for the callback script
 * `org_id`      - The organization ID of your Genesys Cloud instance
 
-The following is an example of the dev.auto.tfvars file.
+The following is an example of the **dev.auto.tfvars** file.
 
 ```
 queue_name  = "Customer Support"
@@ -87,21 +87,22 @@ org_id      = "your-org-id"
 
 ### Run Terraform
 
-You are now ready to run this blueprint solution for your organization. 
+You are now ready to run this blueprint solution for your organization.
 
-1. Change to the **/terraform** folder and issue these commands:
+1. Change to the **/terraform** folder.
+2. Issue the following commands:
 
-* `terraform init` - This command initializes a working directory containing Terraform configuration files.
+* `terraform init` - This command initializes a working directory that contains the Terraform configuration files.
   
-* `terraform plan` - This command executes a trial run against your Genesys Cloud organization and shows you a list of all the Genesys Cloud resources it creates. Review this list and make sure that you are comfortable with the plan before continuing to the second step.
+* `terraform plan` - This command executes a trial run against your Genesys Cloud organization and shows you a list of all the Genesys Cloud resources it creates. Review this list and make sure that you are comfortable with the plan before you continue to the second step.
 
-* `terraform apply --auto-approve` - This command creates and deploys the necessary objects in your Genesys Cloud account. The --auto-approve flag completes the required approval step before the command creates the objects.
+* `terraform apply --auto-approve` - This command creates and deploys the necessary objects in your Genesys Cloud account. The `--auto-approve` flag completes the required approval step before the command creates the objects.
 
-After the `terraform apply --auto-approve` command completes, you should see the output of the entire run along with the number of objects successfully created by Terraform. Keep these points in mind:
+After the `terraform apply --auto-approve` command successfully completes, you see the output of the entire run along with the number of objects that Terraform successfully created. Keep the following points in mind:
 
-*  This project assumes you are running using a local Terraform backing state, which means that the `tfstate` files are created in the same folder where you run the project. Terraform does not recommend using local Terraform backing state files unless you run from a desktop and are comfortable with the deleted files.
+* This project assumes that you run this blueprint solution using a local Terraform backing state, which means that the `tfstate` files are created in the same folder where you run the project. Terraform only recommends using local Terraform backing state files if you run from a desktop and are comfortable with the deleted files.
 
-* As long as you keep your local Terraform backing state projects, you can tear down this blueprint solution by changing to the `docs/terraform` folder and issuing a `terraform destroy --auto-approve` command. This command destroys all objects currently managed by the local Terraform backing state.
+* As long as you keep your local Terraform backing state projects, you can tear down this blueprint solution. To tear down the solution, change to the `docs/terraform` folder and issue the `terraform destroy --auto-approve` command. This command destroys all objects that the local Terraform backing state currently manages.
 
 ### Queue configuration
 
@@ -115,7 +116,7 @@ After the `terraform apply --auto-approve` command completes, you should see the
    ![Interaction details script](images/interaction-details-script.png "Interaction details script")
 2. Schedule a callback and end the interaction.
    ![Add callback](images/add-callback.png "Add callback")
-3. Callback should be added in **Admin > Performance > Scheduled Callbacks**.
+3. Add the callback in **Admin > Performance > Scheduled Callbacks**.
    ![Scheduled callback](images/scheduled-callback.png "Scheduled callback")
 4. Answer the callback and click **Begin Call**.
    ![Begin callback](images/begin-callback.png "Begin callback")
