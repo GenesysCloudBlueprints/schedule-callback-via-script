@@ -51,13 +51,13 @@ An organization wants to allow agents to schedule a callback during a voice inte
 * The Master Admin role. For more information, see [Roles and permissions overview](https://help.mypurecloud.com/?p=24360 "Opens the Roles and permissions overview article") in the Genesys Cloud Resource Center.
 * CX as Code. For more information, see [CX as Code](https://developer.genesys.cloud/devapps/cx-as-code/ "Goes to the CX as Code page") in the Genesys Cloud Developer Center.
 
-### Development tools running in your local environment
+### Development tools that run in your local environment
 
 * Terraform (the latest binary). For more information, see [Download Terraform](https://www.terraform.io/downloads.html "Goes to the Download Terraform page") on the Terraform website.
 
 ## Implementation steps
 
-### Download the repository containing the project files
+### Download the repository that contains the project files
 
 1. Clone the [schedule-callback-via-script repository](https://github.com/GenesysCloudBlueprints/schedule-callback-via-script "Opens the schedule-callback-via-script repository in GitHub").
 
@@ -93,14 +93,14 @@ You are now ready to run this blueprint solution for your organization.
 2. Issue the following commands:
 
 * `terraform init` - This command initializes a working directory that contains the Terraform configuration files.
-  
+
 * `terraform plan` - This command executes a trial run against your Genesys Cloud organization and shows you a list of all the Genesys Cloud resources it creates. Review this list and make sure that you are comfortable with the plan before you continue to the second step.
 
 * `terraform apply --auto-approve` - This command creates and deploys the necessary objects in your Genesys Cloud account. The `--auto-approve` flag completes the required approval step before the command creates the objects.
 
 After the `terraform apply --auto-approve` command successfully completes, you see the output of the entire run along with the number of objects that Terraform successfully created. Keep the following points in mind:
 
-* This project assumes that you run this blueprint solution using a local Terraform backing state, which means that the `tfstate` files are created in the same folder where you run the project. Terraform only recommends using local Terraform backing state files if you run from a desktop and are comfortable with the deleted files.
+* This project assumes that you run this blueprint solution with a local Terraform backing state, which means that the `tfstate` files are created in the same folder where you run the project. Terraform recommends that you use local Terraform backing state files only if you run from a desktop and are comfortable with the deleted files.
 
 * As long as you keep your local Terraform backing state projects, you can tear down this blueprint solution. To tear down the solution, change to the `docs/terraform` folder and issue the `terraform destroy --auto-approve` command. This command destroys all objects that the local Terraform backing state currently manages.
 
