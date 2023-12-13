@@ -1,12 +1,12 @@
 ---
-title: Build a script that allows agents to schedule a callback during a call
+title: Build a script that allows agents to schedule a callback during a voice interaction
 author: agnes.corpuz
 indextype: blueprint
 icon: blueprint
 image: images/banner.png
 category: 4
 summary: |
-  This Genesys Cloud Developer Blueprint provides instructions for building a script to allow agents to schedule a callback via Script while a voice interaction is ongoing. You can deploy all the components used in this solution with the Terraform Genesys Cloud CX as Code provider.
+  This Genesys Cloud Developer Blueprint builds a script that allows agents to schedule a callback during a voice interaction. You deploy all the components used in this solution with the Terraform Genesys Cloud CX as Code provider.
 ---
 :::{"alert":"primary","title":"About Genesys Cloud Blueprints","autoCollapse":false} 
 Genesys Cloud blueprints were built to help you jump-start building an application or integrating with a third-party partner. 
@@ -16,13 +16,13 @@ For more details on Genesys Cloud blueprint support and practices
 please see our Genesys Cloud blueprint [FAQ](https://developer.genesys.cloud/blueprints/faq) sheet.
 :::
 
-This Genesys Cloud Developer Blueprint provides instructions for building a script to allow agents to schedule a callback via Script while a voice interaction is ongoing. You can deploy all the components used in this solution with the Terraform Genesys Cloud CX as Code provider.
+This Genesys Cloud Developer Blueprint builds a script that allows agents to schedule a callback during a voice interaction. You deploy all the components used in this solution with the Terraform Genesys Cloud CX as Code provider.
 
 ![Overview](images/overview.png "Overview")
 
 ## Scenario
 
-An organization wants to allow agents to schedule a callback during a voice interaction with a customer:
+An organization wants to allow an agent to schedule a callback during a voice interaction with a customer:
 
 1. **The customer initiates a voice interaction.** The agent receives the customer's incoming interaction and answers the call.
 
@@ -126,3 +126,4 @@ After the `terraform apply --auto-approve` command successfully completes, you s
 * [About scripting](https://help.mypurecloud.com/articles/about-scripting/ "Opens the About scripting page")
 * [About callbacks](https://help.mypurecloud.com/articles/about-callbacks/ "Opens the About callbacks page")
 * [Add a scheduled callback option to a script](https://help.mypurecloud.com/articles/add-a-schedule-callback-option-to-a-script/ "Opens the Add a scheduled callback option to a script page")
+* [Github repository for the Build a script to allow agents to schedule a callback Blueprint](https://github.com/GenesysCloudBlueprints/schedule-callback-via-script/ "Opens the Github repository for the Build a script to allow agents to schedule a callback during a voice interaction Blueprint")
