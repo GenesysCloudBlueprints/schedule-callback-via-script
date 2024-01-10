@@ -3,7 +3,7 @@ title: Build a script that allows agents to schedule a callback during a voice i
 author: agnes.corpuz
 indextype: blueprint
 icon: blueprint
-image: images/banner.png
+image: images/overview.png
 category: 4
 summary: |
   This Genesys Cloud Developer Blueprint builds a script that allows agents to schedule a callback during a voice interaction. You deploy all the components used in this solution with the Terraform Genesys Cloud CX as Code provider.
